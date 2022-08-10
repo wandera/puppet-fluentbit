@@ -1,7 +1,7 @@
 ---
 
 fluentbit::manage_package_repo: true
-fluentbit::repo_key_fingerprint: F209D8762A60CD49E680633B4FF8368B6EA0722A
+fluentbit::repo_key_fingerprint: C3C0A28534B9293EAF51FABD9F9DDC083888C1CD
 fluentbit::repo_key_location: 'https://packages.fluentbit.io/fluentbit.key'
 fluentbit::package_ensure: present
 fluentbit::package_name: 'td-agent-bit'
