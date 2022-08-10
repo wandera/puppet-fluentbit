@@ -4,17 +4,17 @@ fluentbit::manage_package_repo: true
 fluentbit::repo_key_fingerprint: C3C0A28534B9293EAF51FABD9F9DDC083888C1CD
 fluentbit::repo_key_location: 'https://packages.fluentbit.io/fluentbit.key'
 fluentbit::package_ensure: present
-fluentbit::package_name: 'td-agent-bit'
+fluentbit::package_name: 'fluent-bit'
 
 fluentbit::manage_service: true
 fluentbit::service_enable: true
 fluentbit::service_has_status: true
 fluentbit::service_has_restart: true
 fluentbit::service_ensure: 'running'
-fluentbit::service_name: 'td-agent-bit'
+fluentbit::service_name: 'fluent-bit'
 fluentbit::manage_config_dir: true
 
-fluentbit::config_file: '/etc/td-agent-bit/td-agent-bit.conf'
+fluentbit::config_file: '/etc/fluent-bit/fluent-bit.conf'
 fluentbit::config_file_mode: '0644'
 fluentbit::flush: 5
 fluentbit::daemon: false
@@ -37,15 +37,15 @@ fluentbit::output_plugins: []
 fluentbit::filter_plugins: []
 
 fluentbit::manage_plugins_file: true
-fluentbit::plugins_file: '/etc/td-agent-bit/plugins.conf'
+fluentbit::plugins_file: '/etc/fluent-bit/plugins.conf'
 fluentbit::plugins: []
 
 fluentbit::manage_streams_file: true
-fluentbit::streams_file: '/etc/td-agent-bit/streams.conf'
+fluentbit::streams_file: '/etc/fluent-bit/streams.conf'
 fluentbit::streams: []
 
 fluentbit::manage_parsers_file: true
-fluentbit::parsers_file: '/etc/td-agent-bit/parsers.conf'
+fluentbit::parsers_file: '/etc/fluent-bit/parsers.conf'
 fluentbit::parsers:
 
   - name:   'apache'

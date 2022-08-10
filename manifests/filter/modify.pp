@@ -27,7 +27,7 @@
 # @example
 #   fluentbit::filter::modify { 'namevar': }
 define fluentbit::filter::modify (
-  String $configfile         = '/etc/td-agent-bit/filter_modify.conf',
+  String $configfile         = '/etc/fluent-bit/filter_modify.conf',
   String $match              = '*',
   Optional $set              = undef,
   Optional $add              = undef,

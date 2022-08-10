@@ -10,7 +10,7 @@
 * [`fluentbit::install`](#fluentbitinstall): Installs fluentbit package
 * [`fluentbit::repo`](#fluentbitrepo): configures the fluentbit repo
 * [`fluentbit::repo::debian`](#fluentbitrepodebian): A short summary of the purpose of this class
-* [`fluentbit::service`](#fluentbitservice): Manages the td-agent-bit service
+* [`fluentbit::service`](#fluentbitservice): Manages the fluent-bit service
 
 **Defined types**
 
@@ -52,7 +52,7 @@ Installs the package repositories
 
 Data type: `String[1]`
 
-the td-agent-bit service name
+the fluent-bit service name
 
 ##### `input_plugins`
 
@@ -101,7 +101,7 @@ Default value: 'present'.
 Data type: `String[1]`
 
 Specifies the Fluentbit package to manage.
-Default value: 'td-agent-bit'
+Default value: 'fluent-bit'
 
 ##### `manage_service`
 
@@ -347,7 +347,7 @@ include fluentbit::repo::debian
 
 ### fluentbit::service
 
-Manages the td-agent-bit service
+Manages the fluent-bit service
 
 ## Defined types
 
@@ -374,7 +374,7 @@ Data type: `String`
 Path to the filter configfile. Naming should be filter_*.conf to make sure
 it's getting included by the main config.
 
-Default value: '/etc/td-agent-bit/filter_modify.conf'
+Default value: '/etc/fluent-bit/filter_modify.conf'
 
 ##### `set`
 
@@ -475,7 +475,7 @@ Data type: `String`
 Path to the input configfile. Naming should be input_*.conf to make sure
 it's getting included by the main config.
 
-Default value: "/etc/td-agent-bit/input_forward_${name}.conf"
+Default value: "/etc/fluent-bit/input_forward_${name}.conf"
 
 ##### `listen`
 
@@ -577,7 +577,7 @@ Data type: `String`
 Path to the input configfile. Naming should be input_*.conf to make sure
 it's getting included by the main config.
 
-Default value: '/etc/td-agent-bit/input_syslog.conf'
+Default value: '/etc/fluent-bit/input_syslog.conf'
 
 ### fluentbit::input::tail
 
@@ -595,7 +595,7 @@ Data type: `Stdlib::Absolutepath`
 Path to the input configfile. Naming should be input_*.conf to make sure
 it's getting included by the main config.
 
-Default value: "/etc/td-agent-bit/input_tail_${name}.conf"
+Default value: "/etc/fluent-bit/input_tail_${name}.conf"
 
 ##### `path`
 
@@ -806,7 +806,7 @@ Data type: `String`
 Path to the output configfile. Naming should be output_*.conf to make sure
 it's getting included by the main config.
 
-Default value: "/etc/td-agent-bit/output_es_${name}.conf"
+Default value: "/etc/fluent-bit/output_es_${name}.conf"
 
 ##### `match`
 
@@ -970,7 +970,7 @@ Data type: `Stdlib::Absolutepath`
 Path to the output configfile. Naming should be output_*.conf to make sure
 it's getting included by the main config.
 
-Default value: "/etc/td-agent-bit/output_http_${name}.conf"
+Default value: "/etc/fluent-bit/output_http_${name}.conf"
 
 ##### `match`
 

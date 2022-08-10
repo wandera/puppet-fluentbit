@@ -44,7 +44,7 @@ class fluentbit::config {
   $variables = $fluentbit::variables
 
   file { $fluentbit::config_file:
-    content => template('fluentbit/td-agent-bit.conf.erb'),
+    content => template('fluentbit/fluent-bit.conf.erb'),
   }
 
   $parsers = $fluentbit::parsers

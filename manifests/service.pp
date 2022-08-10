@@ -1,4 +1,4 @@
-# @summary Manages the td-agent-bit service
+# @summary Manages the fluent-bit service
 #
 # @private
 class fluentbit::service {

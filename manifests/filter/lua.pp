@@ -1,5 +1,5 @@
 define fluentbit::filter::lua (
-  String $configfile         = "/etc/td-agent-bit/filter_lua_${name}.conf",
+  String $configfile         = "/etc/fluent-bit/filter_lua_${name}.conf",
   String $match              = '*',
   String $script             = undef,
   String $call               = undef,

@@ -5,7 +5,7 @@
 # @see https://docs.fluentbit.io/manual/
 #
 # @param manage_package_repo Installs the package repositories
-# @param service_name the td-agent-bit service name
+# @param service_name the fluent-bit service name
 # @param input_plugins Hash of the INPUT plugins to be configured
 # @param output_plugins Hash of the OUTPUT plugins to be configured
 # @param filter_plugins Hash of the filter to be configured
@@ -26,7 +26,7 @@
 #
 # @param package_name
 #   Specifies the Fluentbit package to manage.
-#   Default value: 'td-agent-bit'
+#   Default value: 'fluent-bit'
 #
 # @param manage_service
 #   Whether to manage the service at all.

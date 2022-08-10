@@ -36,7 +36,7 @@ define fluentbit::input::syslog(
     default  => undef,
   },
   String $parser = 'syslog-rfc3164',
-  String $configfile = '/etc/td-agent-bit/input_syslog.conf',
+  String $configfile = '/etc/fluent-bit/input_syslog.conf',
   String $rsyslog_config = '/etc/rsyslog.d/60-fluent-bit.conf',
 ) {
   # create input_syslog.conf
