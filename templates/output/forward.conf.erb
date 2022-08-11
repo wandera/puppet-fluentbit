@@ -1,0 +1,58 @@
+# Managed by puppet
+[OUTPUT]
+    Name  forward
+<%- if @match -%>
+    Match <%= @match %>
+<% end -%>
+<% if @host -%>
+    Host  <%= @host %>
+<% end -%>
+<% if @port -%>
+    Port  <%= @port %>
+<% end -%>
+<% if @empty_shared_key -%>
+    Empty_Shared_Key <%= @empty_shared_key %>
+<% end -%>
+<% if @net_keepalive -%>
+    net.keepalive <%= @net_keepalive %>
+<% end -%>
+<% if @net_keepalive_max_recycle -%>
+    net.keepalive_max_recycle  <%= @net_keepalive_max_recycle %>
+<% end -%>
+<% if @storage_total_limit_size -%>
+    storage.total_limit_size  <%= @storage_total_limit_size %>
+<% end -%>
+<% if @tls_enabled -%>
+    tls                    <%= @tls_enabled %>
+<% end -%>
+<% if @tls_verify -%>
+    tls.verify             <%= @tls_verify %>
+<% end -%>
+<% if @tls_debug -%>
+    tls.debug              <%= @tls_debug %>
+<% end -%>
+<% if @tls_ca_file -%>
+    tls.ca_file            <%= @tls_ca_file %>
+<% end -%>
+<% if @tls_ca_path -%>
+    tls.ca_path            <%= @tls_ca_path %>
+<% end -%>
+<% if @tls_crt_file -%>
+    tls.crt_file           <%= @tls_crt_file %>
+<% end -%>
+<% if @tls_key_file -%>
+    tls.key_file           <%= @tls_key_file %>
+<% end -%>
+<% if @tls_key_passwd -%>
+    tls.key_passwd         <%= @tls_key_passwd %>
+<% end -%>
+<% if @tls_vhost -%>
+    tls.vhost              <%= @tls_vhost %>
+<% end -%>
+<% if @retry_limit == false -%>
+    Retry_Limit            False
+<% elsif @retry_limit == true -%>
+    Retry_Limit            1
+<% elsif @retry_limit.is_a?(Integer) -%>
+    Retry_Limit            <%= @retry_limit %>
+<% end -%>
