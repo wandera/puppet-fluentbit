@@ -82,7 +82,7 @@ define fluentbit::output::forward (
   Stdlib::Host $host                            = '127.0.0.1',
   Stdlib::Port $port                            = 24240,
   Fluentbit::TLS $tls                           = {},
-  Bool $empty_shared_key                        = True,
+  Variant[Undef, Boolean] $empty_shared_key     = undef,
   Variant[Undef, Boolean, Integer[1]]
     $retry_limit                                = undef,
   Enum['On', 'Off', 'on', 'off'] $net_keepalive = 'On',
