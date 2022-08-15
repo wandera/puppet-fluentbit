@@ -1,0 +1,15 @@
+# Managed by puppet
+[INPUT]
+    Name systemd
+    Path /run/log/journal
+    Read_From_Tail  <%= @read_from_tail %>
+    DB   <%= @db_dirname %>/<%= @db_filename %>
+    Tag  <%= @fluent_tag %>
+    Lowercase         <%= @lowercase %>
+    Strip_Underscores <%= @strip_underscores %>
+<% @units.each do |item| -%>
+    Systemd_Filter _SYSTEMD_UNIT=<%= item %>
+<% end -%>
+<% @syslog_identifiers.each do |item| -%>
+    Systemd_Filter SYSLOG_IDENTIFIER=<%= item %>
+<% end -%>
