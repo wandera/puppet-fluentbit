@@ -1,10 +1,10 @@
+# @summary custom filtering via Lua plugin
 define fluentbit::filter::lua (
-  String $configfile         = "/etc/fluent-bit/filter_lua_${name}.conf",
+  String $configfile         = "/etc/fluent-bit/filter_${name}_lua.conf",
   String $match              = '*',
   String $script             = undef,
   String $call               = undef,
 ) {
-  # create filter_modify.conf
   # TODO: concat for multiple entries
   file { $configfile:
     ensure  => file,
