@@ -3,5 +3,18 @@
     Name          nest
     Match         <%= @match %>
     Operation     <%= @operation %>
-    Wildcard      <%= @wildcard %>
+<% @wildcards.each do |item| -%>
+    Wildcard      <%= item %>
+<% end -%>
+<% if @nest_under -%>
     Nest_under    <%= @nest_under %>
+<% end -%>
+<% if @nested_under -%>
+    Nested_under    <%= @nested_under %>
+<% end -%>
+<% if @add_prefix -%>
+    Add_prefix    <%= @add_prefix %>
+<% end -%>
+<% if @remove_prefix -%>
+    Remove_prefix    <%= @remove_prefix %>
+<% end -%>

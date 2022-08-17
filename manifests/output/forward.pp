@@ -1,16 +1,17 @@
-# @summary Plugin to output logs to forward logs to another fluentbit/fluentd instance
+# @summary Plugin to forward logs to another fluentbit/fluentd instance
 define fluentbit::output::forward (
   Stdlib::Absolutepath $configfile              = "/etc/fluent-bit/output_forward_${name}.conf",
   String $match                                 = '*',
   Stdlib::Host $host                            = '127.0.0.1',
   Stdlib::Port $port                            = 24240,
   Fluentbit::TLS $tls                           = {},
-  Variant[Undef, Boolean] $empty_shared_key     = undef,
   Variant[Undef, Boolean, Integer[1]]
     $retry_limit                                = undef,
   Enum['On', 'Off', 'on', 'off'] $net_keepalive = 'On',
   Integer $net_keepalive_max_recycle            = 0,
   String $storage_total_limit_size              = '2G',
+  Optional[Boolean] $empty_shared_key,
+  Optional[Boolean] $require_ack_response,
 ) {
 
   $tls_enabled = $tls['enabled'] ? {

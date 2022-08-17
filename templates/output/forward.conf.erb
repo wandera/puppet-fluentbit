@@ -13,6 +13,9 @@
 <% if @empty_shared_key -%>
     Empty_Shared_Key <%= @empty_shared_key %>
 <% end -%>
+<% if @require_ack_response -%>
+    Require_ack_response <%= @require_ack_response %>
+<% end -%>
 <% if @net_keepalive -%>
     net.keepalive <%= @net_keepalive %>
 <% end -%>
