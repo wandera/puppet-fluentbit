@@ -14,6 +14,7 @@ fluentbit::service_ensure: 'running'
 fluentbit::service_name: 'fluent-bit'
 fluentbit::manage_config_dir: true
 
+fluentbit::manage_config_file: true
 fluentbit::config_file: '/etc/fluent-bit/fluent-bit.conf'
 fluentbit::config_file_mode: '0644'
 fluentbit::flush: 5

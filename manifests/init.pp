@@ -58,6 +58,13 @@
 #   configuration resides in.
 #   Default value: true
 #
+# @param manage_config_file
+#   Whether to manage the config file.
+#   Setting this to false requires you to set all the possible includes.
+#   On the other hand, it provides an option to use FluentBit plugins unsupported
+#   by defines of this plugin.
+#   Default value: true
+#
 # @param config_file
 #   Path of the daemon configuration.
 #
@@ -160,6 +167,7 @@ class fluentbit (
   Array[Fluentbit::Stream] $streams,
   Array[Stdlib::Absolutepath] $plugins,
 
+  Boolean $manage_config_file,
   Stdlib::Absolutepath $config_file,
   Stdlib::Filemode $config_file_mode,
   Integer $flush,
