@@ -26,42 +26,50 @@ class fluentbit::config {
     }
   }
 
-  $flush = $fluentbit::flush
-  $daemon = bool2str($fluentbit::daemon, 'On', 'Off')
-  $log_file = $fluentbit::log_file
-  $log_level = $fluentbit::log_level
-  $parsers_file = $fluentbit::parsers_file
-  $plugins_file = $fluentbit::plugins_file
-  $streams_file = $fluentbit::streams_file
-  $http_server = bool2str($fluentbit::http_server, 'On', 'Off')
-  $http_listen = $fluentbit::http_listen
-  $http_port = $fluentbit::http_port
-  $coro_stack_size = $fluentbit::coro_stack_size
-  $storage_path = $fluentbit::storage_path
-  $storage_sync = $fluentbit::storage_sync
-  $storage_checksum = bool2str($fluentbit::storage_checksum, 'On', 'Off')
-  $storage_backlog_mem_limit = $fluentbit::storage_backlog_mem_limit
-  $variables = $fluentbit::variables
+  if $fluentbit::manage_config_file {
+    $flush = $fluentbit::flush
+    $daemon = bool2str($fluentbit::daemon, 'On', 'Off')
+    $log_file = $fluentbit::log_file
+    $log_level = $fluentbit::log_level
+    $parsers_file = $fluentbit::parsers_file
+    $plugins_file = $fluentbit::plugins_file
+    $streams_file = $fluentbit::streams_file
+    $http_server = bool2str($fluentbit::http_server, 'On', 'Off')
+    $http_listen = $fluentbit::http_listen
+    $http_port = $fluentbit::http_port
+    $coro_stack_size = $fluentbit::coro_stack_size
+    $storage_path = $fluentbit::storage_path
+    $storage_sync = $fluentbit::storage_sync
+    $storage_checksum = bool2str($fluentbit::storage_checksum, 'On', 'Off')
+    $storage_backlog_mem_limit = $fluentbit::storage_backlog_mem_limit
+    $variables = $fluentbit::variables
 
-  file { $fluentbit::config_file:
-    content => template('fluentbit/fluent-bit.conf.erb'),
+    file { $fluentbit::config_file:
+      content => template('fluentbit/fluent-bit.conf.erb'),
+    }
   }
 
-  $parsers = $fluentbit::parsers
+  if $fluentbit::manage_parsers_file {
+    $parsers = $fluentbit::parsers
 
-  file { $fluentbit::parsers_file:
-    content => template('fluentbit/parsers.conf.erb'),
+    file { $fluentbit::parsers_file:
+      content => template('fluentbit/parsers.conf.erb'),
+    }
   }
 
-  $plugins = $fluentbit::plugins
+  if $fluentbit::manage_plugins_file {
+    $plugins = $fluentbit::plugins
 
-  file { $fluentbit::plugins_file:
-    content => template('fluentbit/plugins.conf.erb'),
+    file { $fluentbit::plugins_file:
+      content => template('fluentbit/plugins.conf.erb'),
+    }
   }
 
-  $streams = $fluentbit::streams
+  if $fluentbit::manage_streams_file {
+    $streams = $fluentbit::streams
 
-  file { $fluentbit::streams_file:
-    content => template('fluentbit/streams.conf.erb'),
+    file { $fluentbit::streams_file:
+      content => template('fluentbit/streams.conf.erb'),
+    }
   }
 }
