@@ -16,6 +16,9 @@
 <% if @require_ack_response -%>
     Require_ack_response <%= @require_ack_response %>
 <% end -%>
+<% if @compress -%>
+    Compress <%= @compress %>
+<% end -%>
 <% if @net_keepalive -%>
     net.keepalive <%= @net_keepalive %>
 <% end -%>
