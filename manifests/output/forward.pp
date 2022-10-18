@@ -10,6 +10,7 @@ define fluentbit::output::forward (
   Enum['On', 'Off', 'on', 'off'] $net_keepalive = 'On',
   Integer $net_keepalive_max_recycle            = 0,
   String $storage_total_limit_size              = '2G',
+  Optional[Boolean] $compress,
   Optional[Boolean] $empty_shared_key,
   Optional[Boolean] $require_ack_response,
 ) {
