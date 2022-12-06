@@ -6,6 +6,7 @@ class fluentbit::install {
 
   package{ 'fluentbit':
     ensure => $fluentbit::package_ensure,
+    mark   => $fluentbit::package_mark,
     name   => $fluentbit::package_name,
   }
 }
