@@ -96,6 +96,13 @@ Whether to install the Fluentbit package, and what version to install.
 Values: 'present', 'latest', or a specific version number.
 Default value: 'present'.
 
+##### `package_mark`
+
+Data type: `String[1]`
+
+Specifies the Fluentbit package to manage.
+Default value: 'none'
+
 ##### `package_name`
 
 Data type: `String[1]`

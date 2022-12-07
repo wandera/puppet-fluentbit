@@ -24,6 +24,10 @@
 #   Values: 'present', 'latest', or a specific version number.
 #   Default value: 'present'.
 #
+# @param package_mark
+#   Specifies if fluent-bit package should be marked.
+#   Default value: 'none'
+#
 # @param package_name
 #   Specifies the Fluentbit package to manage.
 #   Default value: 'fluent-bit'
@@ -150,6 +154,7 @@ class fluentbit (
   Stdlib::HTTPUrl $repo_key_location,
   String[1] $repo_key_fingerprint,
   String[1] $package_ensure,
+  String[1] $package_mark,
   String[1] $package_name,
   Boolean $manage_service,
   Boolean $service_enable,
