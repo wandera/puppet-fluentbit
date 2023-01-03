@@ -5,12 +5,12 @@
 class fluentbit::repo::redhat {
   assert_private()
 
-  $flavour = dig($facts, 'os', 'distro', 'id')
-  $release = dig($facts, 'os', 'distro', 'codename')
+  $flavour = dig($facts, 'operatingsystem')
+  $release = dig($facts, 'operatingsystemmajrelease')
 
   $supported = $flavour ? {
     'Amazon' => [
-      'Karoo',
+      '2',
     ],
     default => [],
   }
@@ -21,10 +21,8 @@ class fluentbit::repo::redhat {
 
   contain '::yum'
 
-  $_flavour = downcase($flavour)
-
   if $flavour == 'Amazon' {
-    $baseurl = "https://packages.fluentbit.io/amazonlinux/2/\$basearch/"
+    $baseurl = "https://packages.fluentbit.io/amazonlinux/${release}/\$basearch/"
   } else {
     fail("OS ${family}/${os_name} is not supported")l
   }
