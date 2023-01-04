@@ -32,6 +32,12 @@
         "16.04",
         "18.04"
       ]
+    },
+    {
+      "operatingsystem": "Amazon",
+      "operatingsystemrelease": [
+        "2"
+      ]
     }
   ],
   "requirements": [
