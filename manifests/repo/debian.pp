@@ -50,7 +50,7 @@ class fluentbit::repo::debian {
     },
   }
 
+  # by default in Apt::Source Boolean $notify_update = true
   Apt::Source['fluentbit']
-    -> Class['::apt::update']
-    -> Package['fluentbit']
+  -> Package['fluentbit']
 }
